@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;800;900&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style/all.min.css">
+    <link rel="stylesheet" href="Style/bootstrap.min.css">
+    <link rel="stylesheet" href="Style/Style.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Exam</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo@2x.png" alt="" width="64" height="40" style="margin-right: 10px;"/>
+                <div class="d-inline-block" style="vertical-align: middle;">
+                    <h1 class="title">Weather</h1>
+                    <small class="desc">tagline goes here</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Live Cameras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Pages/Contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="Home">
+        <div class="container">
+            <form class="findLocation">
+                <input type="text" placeholder="Find Your location..." id="LocationSearch"/>
+                <input type="button" value="Search" id="Submit"/>
+                <!-- <button onclick="LocationSearch()">Search</button> -->
+            </form>
+        </div>
+    </section>
+    <section class="WeatherTable">
+        <div class="container">
+            <div class="WeatherTableContainer" id="WeatherTable">
+                <div class="today">
+                    <div class="headerr" id="today">
+                        <div class="day" style="float: left; color: #BFC1C8; font-size: 14px;" id="DayOfWeek"></div>
+                        <div class="date" style="float: right; color: #BFC1C8; font-size: 14px;" id="todayDate"></div>
+                        <div class="end"></div>
+                    </div>
+                    <div class="WeatherContent" id="current">
+                        <div class="location" style="color: #BFC1C8;" id="country"></div>
+                        <div class="degree" style="display: flex; vertical-align: middle;">
+                            <div class="degreeNum" id="TodayDegreeNum"></div>
+                            <div class="WeatherIcon" id="TodayWeatherIcon"></div>
+                        </div>
+                        <div class="el7ala" style="color: #009ad8; margin: 20px 0" id="el7alaNow"></div>
+                        <span style="margin-right: 20px; color: #BFC1C8;"><img src="images/icon-umberella@2x.png" alt="" width="21" height="21" style="margin: 0 5px 0 0; vertical-align: middle;"/>20%</span>
+                        <span style="margin-right: 20px; color: #BFC1C8;"><img src="images/icon-wind@2x.png" alt="" width="21" height="21" style="margin: 0 5px 0 0; vertical-align: middle;"/>18Km/h</span>
+                        <span style="margin-right: 20px; color: #BFC1C8;"><img src="images/icon-compass@2x.png" alt="" width="21" height="21" style="margin: 0 5px 0 0; vertical-align: middle;"/>East</span>
+                    </div>
+                </div>
+                <div class="tomorrow" style="background-color: #262936;">
+                    <div class="headerr">
+                        <div class="day" style="color: #BFC1C8; font-size: 14px;" id="TomorrowDayOfWeek"></div>
+                    </div>
+                    <div class="WeatherContent">
+                        <div class="WeatherIcon" id="TomorrowWeatherIcon"></div>
+                        <div class="degree" style="font-size: 24px;" id="MaxTomorrowDegree"></div>
+                        <small style="font-size: 16px; color: #BFC1C8;" id="MinTomorrowDegree"></small>
+                        <div class="el7ala" style="color: #009ad8; margin: 20px 0" id="el7alaTomorrow"></div>
+                    </div>
+                </div>
+                <div class="afterTomorrow">
+                    <div class="headerr">
+                        <div class="day" style="color: #BFC1C8; font-size: 14px;" id="AfterTomorrowDayOfWeek"></div>
+                    </div>
+                    <div class="WeatherContent">
+                        <div class="WeatherIcon" id="AfterTomorrowWeatherIcon"></div>
+                        <div class="degree" style="font-size: 24px;" id="MaxAfterTomorrowDegree">
+                            <!-- 21.2<sup style="top: -0.5em;">o</sup>C -->
+                        </div>
+                        <small style="font-size: 16px; color: #BFC1C8;" id="MinAfterTomorrowDegree">
+                            <!-- 13.7<sup style="top: -0.5em;">o</sup> -->
+                        </small>
+                        <div class="el7ala" style="color: #009ad8; margin: 20px 0" id="el7alaAfterTomorrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Start of Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <form class="subscribe">
+                        <input type="email" placeholder="Enter your email to subscribe..."/>
+                        <input type="button" value="Subscribe"/>
+                        <!-- <button class="Search" style="top: 807px; right: 555px; bottom: -115px;">Search</button> -->
+                    </form>
+                </div>
+                <div class="col-md-3 offset-md-1">
+                    <div class="social">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 0; color: #BFC1C8;">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+    <script src="Js/bootstrap.bundle.min.js"></script>
+    <script src="Js/Js.js"></script>
+</body>
+</html>
